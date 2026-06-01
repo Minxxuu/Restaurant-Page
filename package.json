@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
-    "build": "webpack",
+    "tw:build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css",
+    "tw:watch": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "start": "npm run tw:build && webpack serve",
+    "build": "npm run tw:build && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,9 +23,15 @@
   },
   "homepage": "https://github.com/Minxxuu/Restaurant-Page#readme",
   "devDependencies": {
+    "css-loader": "^7.1.4",
     "html-webpack-plugin": "^5.6.4",
+    "style-loader": "^4.0.0",
     "webpack": "^5.107.2",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.4"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
   }
 }

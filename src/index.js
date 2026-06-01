@@ -1,2 +1,2 @@
-alert("HEY YOU GUUUYS!");
-console.log("cringe");
+import renderHome from "./home.js";
+renderHome();
